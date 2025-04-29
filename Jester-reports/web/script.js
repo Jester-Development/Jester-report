@@ -89,9 +89,8 @@ window.addEventListener('message', function(event) {
                 <h3>${getReportTypeName(data.report.type)}: ${data.report.subject}</h3>
             `;
             
-            const closeBtn = document.createElement('button');
-            closeBtn.className = 'close-btn';
-            closeBtn.textContent = '×';
+            const closeBtn = document.createElement('i');
+            closeBtn.className = 'fas fa-times-circle close-btn';
             closeBtn.onclick = function() {
                 closeChat(data.report.id);
             };
@@ -112,7 +111,7 @@ window.addEventListener('message', function(event) {
             
             // Add existing messages
             if (data.report.messages && data.report.messages.length > 0) {
-                data.reports.messages.forEach(message => {
+                data.report.messages.forEach(message => {
                     const messageElement = createMessageElement(message);
                     messagesContainer.appendChild(messageElement);
                 });
@@ -206,9 +205,8 @@ window.addEventListener('message', function(event) {
                 updateReportStatus(data.report.id, 'rejected');
             };
             
-            const closeChatBtn = document.createElement('button');
-            closeChatBtn.className = 'close-btn';
-            closeChatBtn.textContent = '×';
+            const closeChatBtn = document.createElement('i');
+            closeChatBtn.className = 'fas fa-times-circle close-btn';
             closeChatBtn.onclick = function() {
                 closeChat(data.report.id);
             };
