@@ -1,0 +1,3 @@
+dit is versie 1.0 
+we moeten nog wel standard bugs fixen in latere updates
+we updaten dit 1 keer per maand

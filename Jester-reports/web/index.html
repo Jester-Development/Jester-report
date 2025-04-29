@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jester Reports</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- Report Menu -->
+    <div id="report-menu" class="container hidden">
+        <div class="menu-header">
+            <div class="header-content">
+                <span class="header-icon fas fa-file-alt"></span>
+                <h2 id="menu-title">Jester Reports</h2>
+            </div>
+            <i class="fas fa-times-circle close-btn" onclick="closeMenu()"></i>
+        </div>
+        <div class="menu-content">
+            <div class="reporting-info">
+                <span class="label" id="reporting-label">REPORTING USER</span>
+                <span id="player-name">Welcome, Player</span>
+            </div>
+            <div class="input-group">
+                <select id="report-type" class="report-input">
+                    <option value="player"><i class="fas fa-user"></i> Player Report</option>
+                    <option value="bug"><i class="fas fa-bug"></i> Bug Report</option>
+                    <option value="other"><i class="fas fa-banana"></i> Other Report</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <input type="text" id="report-subject" class="report-input" placeholder="Subject">
+            </div>
+            <div class="input-group">
+                <textarea id="report-text" class="report-input" placeholder="Describe the issue..."></textarea>
+            </div>
+            <button class="submit-btn" onclick="submitReport()">
+                <span class="btn-icon fas fa-paper-plane"></span>
+                Submit Report
+            </button>
+        </div>
+    </div>
+
+    <!-- Reports List -->
+    <div id="reports-list" class="container hidden">
+        <div class="menu-header">
+            <div class="header-content">
+                <span class="header-icon fas fa-file-alt"></span>
+                <h2 id="reports-title">Jester Reports</h2>
+            </div>
+            <i class="fas fa-times-circle close-btn" onclick="closeReportsList()"></i>
+        </div>
+        <div id="reports-container" class="reports-container"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
